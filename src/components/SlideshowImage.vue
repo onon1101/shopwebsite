@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .mySwiper img {
-  width: 100%;
+  width: 130%;
   height: auto;
 
   object-fit: cover; /* Ensure the image maintains aspect ratio and covers the entire area */
