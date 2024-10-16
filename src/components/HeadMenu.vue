@@ -1,0 +1,400 @@
+<template>
+    <div class="headmenu">
+    <nav>
+
+      <div class="wrapper">
+        <div class="logo">
+          <!--a href="#">VSPO</a-->
+          <img alt="Vue logo"  width="50%" src="../assets/logo.avif" />
+        </div>
+        <input type="radio" name="slide" id="menu_btn" /><input type="radio" name="slide" id="cancel_btn" />
+        <ul class="nav_links">
+          <label for="cancel_btn" class="btn cancel_btn">
+            <i class="fas fa-times"></i>
+          </label>
+          <li><a href="#">商品</a></li>
+          <li><a href="#">數位商品</a></li>
+          <li>
+            <a href="#" class="desktop_item">Dropdown Menu</a>
+            <input type="checkbox" id="showDrop" />
+            <label for="showDrop" class="mobile_item">Dropdown Menu</label>
+            <ul class="drop_menu">
+              <li><a href="#">Drop Menu 1</a></li>
+              <li><a href="#">Drop Menu 2</a></li>
+              <li><a href="#">Drop Menu 3</a></li>
+              <li><a href="#">Drop Menu 4</a></li>
+              <li><a href="#">Drop Menu 5</a></li>
+              <li><a href="#">Drop Menu 6</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="desktop_item">Mega Menu</a>
+            <input type="checkbox" id="showMega" />
+            <label for="showMega" class="mobile_item">Mega Menu</label>
+            <div class="mega_box">
+              <div class="content">
+                <!--  -->
+                <div class="row img_row">
+                  <!-- <header>Our Services</header> -->
+                  <div class="services_img"></div>
+                </div>
+                <!--  -->
+                <div class="row">
+                  <header>Design Services</header>
+                  <ul class="mega_links first_links">
+                    <li><a href="#">Graphics</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Architecture</a></li>
+                    <li><a href="#">Ui / Ux</a></li>
+                  </ul>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="row">
+                  <header>Product Services</header>
+                  <ul class="mega_links">
+                    <li><a href="#">Graphics</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Architecture</a></li>
+                    <li><a href="#">Ui / Ux</a></li>
+                  </ul>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="row">
+                  <header>SEO Services</header>
+                  <ul class="mega_links">
+                    <li><a href="#">Graphics</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Architecture</a></li>
+                    <li><a href="#">Ui / Ux</a></li>
+                  </ul>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+          </li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+        <label for="menu_btn" class="btn menu_btn">
+          <i class="fas fa-bars"></i>
+        </label>
+      </div>
+    </nav>
+
+    </div>
+</template>
+
+<script>
+
+</script>
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  height: 65px;
+  line-height: 65px;
+}
+
+nav .wrapper {
+  position: relative;
+  max-width: 12500px;
+  padding: 0 20px;
+  margin: 10px 400px 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .nav_links {
+  display: flex;
+}
+
+.wrapper .logo,image {
+  position: relative;
+  top: 10px;
+
+}
+
+.wrapper .logo a,
+.nav_links li a {
+  color: #000000;
+  text-decoration: none;
+}
+.wrapper .logo a {
+  font-size: 27px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+.nav_links li a {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 9px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav_links li {
+  list-style-type: none;
+}
+.nav_links li a:hover {
+  background: #dfe1e4;
+}
+.nav_links .mobile_item {
+  display: none;
+}
+
+/**********************************
+            Drop Down Menu             
+*********************************** */
+
+.nav_links .drop_menu {
+  position: absolute;
+  top: 65px;
+  width: 180px;
+  line-height: 45px;
+  background-color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.nav_links li:hover .drop_menu,
+.nav_links li:hover .mega_box {
+  top: 65px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.drop_menu li a {
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+
+/**********************************
+              Mega Menu             
+*********************************** */
+
+.mega_box {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mega_box .content {
+  background-color: #242526;
+  padding: 25px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.content .row {
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+
+.content .row header {
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.content .row .services_img {
+  background-image: url(https://i.pinimg.com/originals/cc/21/4a/cc214a8fc4c81b090c84811ddcfa791c.jpg);
+  background-color: #d9d9d9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.content .row .mega_links {
+  margin-left: -40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+.content .row .first_links {
+  border-left: 0px;
+}
+
+.row .mega_links li {
+  padding: 0 20px;
+}
+.row .mega_links li a {
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 17px;
+  line-height: 45px;
+  display: block;
+}
+
+/* buttons style */
+
+.wrapper .btn {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.cancel_btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+/**********************************
+          Responsive Styles             
+*********************************** */
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn {
+    display: block;
+  }
+  .wrapper .nav_links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    background: #242526;
+    display: block;
+    top: 0;
+    left: 0;
+    left: -100%;
+    overflow-y: auto;
+    line-height: 50px;
+    padding: 50px 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease-in-out;
+  }
+  #menu_btn:checked ~ .nav_links {
+    left: 0%;
+  }
+  #menu_btn:checked ~ .btn.menu_btn {
+    display: none;
+  }
+  .nav_links::-webkit-scrollbar {
+    width: 0px;
+  }
+  .nav_links li {
+    margin: 15px 10px;
+  }
+  .nav_links li a {
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+
+  /* drop down responsive */
+
+  .nav_links .drop_menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    top: 65px;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  #showDrop:checked ~ .drop_menu {
+    max-height: 100%;
+  }
+  .nav_links .drop_menu li {
+    margin: 0;
+  }
+  .nav_links .drop_menu li a {
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .nav_links .desktop_item {
+    display: none;
+  }
+  .nav_links .mobile_item {
+    display: block;
+    font-size: 20px;
+    color: #f2f2f2;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav_links .mobile_item:hover {
+    background: #3a3b3c;
+  }
+
+  /* Mega menu responsive */
+
+  .mega_box {
+    position: static;
+    top: 65px;
+    width: 100%;
+    padding: 0 20px;
+    opacity: 1;
+    max-height: 0px;
+    visibility: visible;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  #showMega:checked ~ .mega_box {
+    max-height: 100%;
+  }
+
+  .mega_box .content {
+    background-color: #242526;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega_box .content .row {
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(131, 110, 110, 0.08);
+  }
+  .mega_box .content .row:nth-child(1),
+  .mega_box .content .row:nth-child(2) {
+    border-top: 0px;
+  }
+  .content .row .services_img {
+    height: 200px;
+  }
+  .content .img_row {
+    border-top: none !important;
+  }
+  .content .row .mega_links {
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega_links li {
+    margin: 0;
+  }
+  .content .row header {
+    font-size: 18px;
+  }
+}
+.wrapper input {
+  display: none;
+}
+</style>
