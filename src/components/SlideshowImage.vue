@@ -4,7 +4,7 @@
       :navigation="true"
       :modules="modules"
       :pagination="{ clickable: true }"
-      :slides-per-view="2"
+      :slides-per-view="3"
       :space-between="10"
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
       @slideChange="onSlideChange"
