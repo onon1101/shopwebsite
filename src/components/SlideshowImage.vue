@@ -53,14 +53,17 @@ export default {
 
 <style scoped>
 .mySwiper img {
-  width: 130%;
+  width: 100%;
   height: auto;
 
   object-fit: cover; /* Ensure the image maintains aspect ratio and covers the entire area */
 }
 
 .mySwiper {
-  max-width: 100%; /* Set a maximum width for the swiper container */
-  margin: 0 auto; /* Center the swiper */
+  
+  max-width: 160%; /* Set a maximum width for the swiper container */
+  max-height: 100%; /* Set a maximum width for the swiper container */
+  margin: 0 -300px; /* Center the swiper */
+
 }
 </style>
