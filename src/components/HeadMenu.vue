@@ -15,7 +15,7 @@
           <li><a href="#">商品</a></li>
           <li><a href="#">數位商品</a></li>
           <li>
-            <a href="#" class="desktop_item">Dropdown Menu</a>
+            <a href="#" class="desktop_item">成員</a>
             <input type="checkbox" id="showDrop" />
             <label for="showDrop" class="mobile_item">Dropdown Menu</label>
             <ul class="drop_menu">
@@ -28,7 +28,7 @@
             </ul>
           </li>
           <li>
-            <a href="#" class="desktop_item">Mega Menu</a>
+            <a href="#" class="desktop_item">所有產品清單</a>
             <input type="checkbox" id="showMega" />
             <label for="showMega" class="mobile_item">Mega Menu</label>
             <div class="mega_box">
@@ -74,7 +74,7 @@
               </div>
             </div>
           </li>
-          <li><a href="#">Feedback</a></li>
+          <li><a href="#">常見問題</a></li>
         </ul>
         <label for="menu_btn" class="btn menu_btn">
           <i class="fas fa-bars"></i>
@@ -104,16 +104,18 @@ nav {
   z-index: 999;
   height: 65px;
   line-height: 65px;
+
 }
 
 nav .wrapper {
   position: relative;
   max-width: 12500px;
-  padding: 0 20px;
-  margin: 10px 400px 20px 10%;
+  padding: 0 40px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  top:20px
 }
 
 .wrapper .nav_links {
@@ -128,11 +130,12 @@ nav .wrapper {
 
 .wrapper .logo a,
 .nav_links li a {
+
   color: #000000;
   text-decoration: none;
 }
 .wrapper .logo a {
-  font-size: 27px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -140,7 +143,7 @@ nav .wrapper {
 
 
 .nav_links li a {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: 5px;
   padding: 9px 15px;
