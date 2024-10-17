@@ -5,20 +5,24 @@
       <Slidshowimage/>
     </div>
 
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
   </div>
+  <div class ="newarrival">
+      <h1>NEW ARRIVAL</h1>
+      <h1>新商品</h1>
+  </div>
+
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 import HeadMenu from '../components/HeadMenu.vue'
 import Slidshowimage from '../components/SlideshowImage.vue'
 export default {
   name: 'HomeView' ,
   components: {
-    HelloWorld,HeadMenu,Slidshowimage
+    HeadMenu,Slidshowimage
   }
 }
 </script>
@@ -27,6 +31,13 @@ export default {
 .home .slidshowimage{
   position: relative;
   top:120px;
+}
+
+.newarrival h1{
+  font-family:'fantasy';
+  color: rgba(149, 75, 219, 0.842);
+  position: relative;
+  top: 200px;
 }
 
 </style>
