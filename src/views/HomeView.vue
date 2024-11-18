@@ -53,7 +53,7 @@ export default {
 .newarrival{
   position: relative;
   top: 200px;
-  margin: 0px 350px;
+  margin: 0px 10%;
 }
 
 
@@ -71,7 +71,7 @@ export default {
   flex-wrap: nowrap;
   align-items: flex-start;
 
-  margin:0 -50px;
+  margin:0 -3%;
   margin-top: 20px;
 }
 
