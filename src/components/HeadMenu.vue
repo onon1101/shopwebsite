@@ -116,7 +116,7 @@ nav .wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  top:20px
+  top:10px
 }
 
 .wrapper .nav_links {
@@ -125,7 +125,7 @@ nav .wrapper {
 
 .wrapper .logo,image {
   position: relative;
-  top: 10px;
+  top: 0px;
 
 }
 
@@ -167,7 +167,7 @@ nav .wrapper {
 
 .nav_links .drop_menu {
   position: absolute;
-  top: 65px;
+  top: 44px;
   width: 180px;
   line-height: 45px;
   background-color: #ffffff;
@@ -177,7 +177,7 @@ nav .wrapper {
 }
 .nav_links li:hover .drop_menu,
 .nav_links li:hover .mega_box {
-  top: 65px;
+  top: 44px;
   opacity: 1;
   visibility: visible;
 }

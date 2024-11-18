@@ -53,7 +53,7 @@ export default {
 .newarrival{
   position: relative;
   top: 200px;
-  margin: 0px 200px;
+  margin: 0px 350px;
 }
 
 
@@ -69,14 +69,14 @@ export default {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
-  margin-left: -80px;
+  margin-left: -100px;
   margin-top: 20px;
 }
 
 .newarrival .newproductlist img{
 
 
-  max-width: 70%;
+  max-width: 68%;
   height: auto;
 
 }
