@@ -125,7 +125,7 @@ nav .wrapper {
 
 .wrapper .logo,image {
   position: relative;
-  top: 0px;
+  top: 10px;
 
 }
 

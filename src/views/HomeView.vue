@@ -58,6 +58,7 @@ export default {
 
 
 .newarrival h1{
+  font-size: 30px;
   font-family:'fantasy';
   color: rgba(149, 75, 219, 0.842);
 }
@@ -69,7 +70,8 @@ export default {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
-  margin-left: -100px;
+
+  margin:0 -50px;
   margin-top: 20px;
 }
 
