@@ -9,12 +9,14 @@
   <div class ="newarrival">
       <h1>NEW ARRIVAL</h1>
       <h1>新商品</h1>
-
-        <div class = newproductlist v-for ="(item,index) in images" :key = "index">
-           <img :src = "item" alt = "">
-
+        <div class = newproductlist v-for ="(item,index) in images"  :key = "index" >
+          <img :src="item.src" :alt="item.description" />
+  <div class="description">{{ item.description }}</div>
       </div>
-
+  </div>
+  <div class = newproductlist2 v-for ="(item,index) in images2"  :key = "index" >
+    <img :src="item.src" :alt="item.description" />
+    <div class="description">{{ item.description }}</div>
   </div>
 </template>
 
@@ -29,14 +31,37 @@ export default {
     HeadMenu,Slidshowimage
   },
   data:function(){
-    return{
-      images:(function(){
-        let filearr = [] ;
-        for(let i = 1 ; i <=8 ; i++){
-          filearr[i-1] = require('../assets/test' + i + '.png');
+    return {
+      images: (function () {
+        let filearr = [];
+        for (let i = 1; i <= 4; i++) {
+          filearr.push({
+            src: require(`../assets/test${i}.png`),
+            description: `商品描述 ${i}` // 添加描述
+          });
         }
         return filearr;
       })(),
+      images2: (function () {
+        let filearr = [];
+        for (let i = 5; i <= 8; i++) {
+          filearr.push({
+            src: require(`../assets/test${i}.png`),
+            description: `商品描述 ${i}` // 添加描述
+          });
+        }
+        return filearr;
+      })(),
+    }
+
+  },
+  computed:{
+    isShow:function(index){
+      if(index >= 4){
+        return false ;
+      }else{
+        return true ; 
+      }
     }
   }
 }
@@ -53,7 +78,7 @@ export default {
 .newarrival{
   position: relative;
   top: 200px;
-  margin: 0px 10%;
+  margin: 0px 0px;
 }
 
 
@@ -63,23 +88,38 @@ export default {
   color: rgba(149, 75, 219, 0.842);
 }
 
-
 .newarrival .newproductlist{
-  
-  display:inline-block;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-
-  margin:0 -3%;
+  align-items: center;
+  flex-direction: column;
+  display:inline-flex;
+  justify-content: center ;
+  box-sizing: border-box;
+  margin: 0px -50px;
+  padding: 0 0px;
   margin-top: 20px;
 }
-
-.newarrival .newproductlist img{
-
-
-  max-width: 68%;
-  height: auto;
+.newproductlist2{
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 200px;
+  margin: 0px 0px;
+  display:inline-flex;
+  justify-content: center ;
+  box-sizing: border-box;
+  margin: 0px -50px;
+  padding: 0 0px;
+  margin-top: 20px;
+}
+.description {
+  font-size: 16px;
+  color: #555;
+  text-align: left; /* 文字靠左对齐 */
 
 }
+img{
+  max-width:68%;
+  height: auto;
+}
+
 </style>
