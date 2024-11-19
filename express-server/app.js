@@ -7,12 +7,17 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-// app.all("*",(req,res,next) =>{
-//     res.header("Access-Control-Allow-Credentials","true");
-//     res.header("Access-Control-Allow-Origin",req.headers.origin);
-//     res.header("Access-Control-Allow-Methods","PUT,GET,POST,DELETE,OPTIONS");
-//     res.header("Access-Control-Allow-Headers","Content-Type,username");
-// });
+const cors = require('cors');  
+app.use(cors({  
+    origin:['http://localhost:8080'],
+    methods:['GET','POST','DELETE'],
+}));
+app.all('*',function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+　next();　
+});
 const port = 3002
 
 var mysql = require('mysql');

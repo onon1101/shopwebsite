@@ -9,12 +9,12 @@
   <div class ="newarrival">
       <h1>NEW ARRIVAL</h1>
       <h1>新商品</h1>
-        <div class = newproductlist v-for ="(item,index) in images"  :key = "index" >
+        <div class = newproductlist v-for ="(item,index) in getimage(1)"  :key = "index" >
           <img :src="item.src" :alt="item.description" />
   <div class="description">{{ item.description }}</div>
       </div>
   </div>
-  <div class = newproductlist2 v-for ="(item,index) in images2"  :key = "index" >
+  <div class = newproductlist2 v-for ="(item,index) in  getimage(5)"  :key = "index" >
     <img :src="item.src" :alt="item.description" />
     <div class="description">{{ item.description }}</div>
   </div>
@@ -22,7 +22,16 @@
 
 <script>
 // @ is an alias to /src
-
+import axios from "axios"
+axios.get('http://localhost:3002/api/product/GetAllProduct')
+      .then(response => {
+        console.log("ok");
+         console.log(response.data);
+      })
+      .catch(error => {
+        console.log("notok");
+        console.error(error);
+      });
 import HeadMenu from '../components/HeadMenu.vue'
 import Slidshowimage from '../components/SlideshowImage.vue'
 export default {
@@ -56,12 +65,19 @@ export default {
 
   },
   computed:{
-    isShow:function(index){
-      if(index >= 4){
-        return false ;
-      }else{
-        return true ; 
-      }
+    getimage(){
+
+      return(index) =>{
+        let filearr = [];
+        for (let i = index; i <= index+3; i++) {
+          filearr.push({
+            src: require(`../assets/test${i}.png`),
+            description: `商品描述 ${i}` // 添加描述
+          });
+        }
+        return filearr;
+      };
+
     }
   }
 }
@@ -69,7 +85,9 @@ export default {
 
 <style scoped>
 
+
 .home .slidshowimage{
+  overflow:hidden;
   position: relative;
   top:120px;
 }
@@ -114,8 +132,7 @@ export default {
 .description {
   font-size: 16px;
   color: #555;
-  text-align: left; /* 文字靠左对齐 */
-
+  text-align: left;
 }
 img{
   max-width:68%;

@@ -53,6 +53,7 @@ export default {
 
 <style scoped>
 .mySwiper img {
+
   width: 100%;
   height: auto;
 
@@ -60,10 +61,16 @@ export default {
 }
 
 .mySwiper {
-  
   max-width: 160%; /* Set a maximum width for the swiper container */
   max-height: 100%; /* Set a maximum width for the swiper container */
   margin: 0 -300px; /* Center the swiper */
 
+
+
+
+  
 }
+
+
+
 </style>

@@ -12,7 +12,7 @@
           <label for="cancel_btn" class="btn cancel_btn">
             <i class="fas fa-times"></i>
           </label>
-          <li><a href="/about">商品</a></li>
+          <li><a href="/shopwebsite/about">商品</a></li>
           <li><a href="#">數位商品</a></li>
           <li>
             <a href="#" class="desktop_item">成員</a>
