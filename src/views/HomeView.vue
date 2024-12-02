@@ -18,22 +18,29 @@
     <img :src="item.src" :alt="item.description" />
     <div class="description">{{ item.description }}</div>
   </div>
+  <div class = "testlogic">
+    <a>登入測試:{{loginstate}}</a>
+    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import axios from "axios"
-axios.get('http://localhost:3002/api/product/GetAllProduct')
-      .then(response => {
-        console.log("ok");
-         console.log(response.data[0].Image_path);
-      })
-      .catch(error => {
-        console.log("notok");
-        console.error(error);
-      });
+// import axios from "axios"
+
+// axios.get('http://localhost:3002/api/product/GetAllProduct')
+//       .then(response => {
+//         console.log("ok");
+//          console.log(response.data[0].Image_path);
+//       })
+//       .catch(error => {
+//         console.log("notok");
+//         console.error(error);
+//       });
 import HeadMenu from '../components/HeadMenu.vue'
 import Slidshowimage from '../components/SlideshowImage.vue'
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
+console.log(cookies.get('LoggedIn'));
 export default {
   name: 'HomeView' ,
   components: {
@@ -41,6 +48,7 @@ export default {
   },
   data:function(){
     return {
+      loginstate : cookies.get('LoggedIn'),
       images: (function () {
         let filearr = [];
         for (let i = 1; i <= 4; i++) {
@@ -83,7 +91,10 @@ export default {
 </script>
 
 <style scoped>
-
+.testlogic{
+  top:200px;
+  position: relative;
+}
 
 .home .slidshowimage{
   overflow:hidden;

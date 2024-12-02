@@ -50,9 +50,11 @@ router.get('/api/member/CheckMemberAccount',function(req,res,next){
           message: '帳號或密碼錯誤'
       });
       }else{
-        return res.json({
+         res.cookie('LoggedIn', true, {maxAge:6000000}); 
+         return res.json({
           success: true,  // 標示操作是否成功
           message: '登入成功',
+          token: 'dummy-jwt-token'  // 假設返回的 token
       });
       }
     }

@@ -26,8 +26,9 @@ import HeadMenu from '../components/HeadMenu.vue'
 import axios from "axios"
 axios.defaults.withCredentials = true 
 
-// axios.get('http://localhost:3002/api/member/CheckMemberAccount?account=Yihss&password=1234');
 // console.log(cookies.get('LoggedIn'));
+// axios.get('http://localhost:3002/api/member/CheckMemberAccount?account=Yihss&password=1234');
+
   // 设置cookie
   // 获取
  // v2
@@ -49,10 +50,11 @@ export default {
                         password: this.password
                     }
                 });
-                console.log(response.data);
+             //   console.log(response.data);
                 if (response.data.success) {
                     alert('登入成功');
-                    window.location.href="http://localhost:8080/shopwebsite/"
+                    this.$router.push('/');
+
                 } else {
                     alert('登入失敗，帳號或密碼錯誤');
                 }
