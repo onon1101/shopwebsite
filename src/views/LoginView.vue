@@ -3,9 +3,9 @@
     <div class="login-form-container">
         <h1>登入</h1>
         <div class="input_Common_Input_Box">
-            <form>
-                <input type="email" id="customer[email]" placeholder="電子郵件" autocomplete="email" class="input__field" name="customer[email]" required="required"><br>
-                <input type="password" id="customer[password]" placeholder="密碼" class="input__field" name="customer[password]" required="required" autocomplete="current-password"><br>
+            <form  @submit.prevent="handleLogin()">
+                <input type="email" v-model="account" id="customer[email]" placeholder="電子郵件" autocomplete="email" class="input__field" name="customer[email]" required="required"><br>
+                <input type="password" v-model="password" id="customer[password]" placeholder="密碼" class="input__field" name="customer[password]" required="required" autocomplete="current-password"><br>
                 <input type="submit" value="登入" class="button"/>
             </form>
         </div>
@@ -17,12 +17,51 @@
         </div>
     </div>
 </template>
+
 <script>
+
 import HeadMenu from '../components/HeadMenu.vue'
+// import { useCookies } from "vue3-cookies";
+// const { cookies } = useCookies();
+import axios from "axios"
+axios.defaults.withCredentials = true 
+
+// axios.get('http://localhost:3002/api/member/CheckMemberAccount?account=Yihss&password=1234');
+// console.log(cookies.get('LoggedIn'));
+  // 设置cookie
+  // 获取
+ // v2
 export default {
     name: 'MemberView' ,
     components: {
       HeadMenu
+    },
+    data(){
+ 
+    },
+    methods:{
+        async handleLogin() {
+            try {
+                // 發送 GET 請求，帶上使用者輸入的帳號和密碼
+                const response = await axios.get('http://localhost:3002/api/member/CheckMemberAccount', {
+                    params: {
+                        account: this.account,
+                        password: this.password
+                    }
+                });
+                console.log(response.data);
+                if (response.data.success) {
+                    alert('登入成功');
+                    window.location.href="http://localhost:8080/shopwebsite/"
+                } else {
+                    alert('登入失敗，帳號或密碼錯誤');
+                }
+            } catch (error) {
+                console.error(error);
+                alert('登入失敗，請檢查伺服器連接');
+            }
+
+        }
     }
 }
 </script>

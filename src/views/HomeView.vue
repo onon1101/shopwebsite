@@ -66,7 +66,6 @@ export default {
   },
   computed:{
     getimage(){
-
       return(index) =>{
         let filearr = [];
         for (let i = index; i <= index+3; i++) {

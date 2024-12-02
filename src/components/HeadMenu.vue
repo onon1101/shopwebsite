@@ -76,6 +76,7 @@
           </li>
           <li><a href="#">常見問題</a></li>
           <li><a href="/shopwebsite/Login">會員</a></li>
+          <li><a href="#">購物車</a></li>
         </ul>
         <label for="menu_btn" class="btn menu_btn">
           <i class="fas fa-bars"></i>
