@@ -5,7 +5,7 @@
       <div class="wrapper">
         <div class="logo">
           <!--a href="#">VSPO</a-->
-          <img alt="Vue logo"  width="50%" src="../assets/logo.avif" />
+          <a href="/shopwebsite"><img alt="Vue logo"  width="50%" src="../assets/logo.avif" /></a>
         </div>
         <input type="radio" name="slide" id="menu_btn" /><input type="radio" name="slide" id="cancel_btn" />
         <ul class="nav_links">
@@ -75,6 +75,7 @@
             </div>
           </li>
           <li><a href="#">常見問題</a></li>
+          <li><a href="/shopwebsite/Login">會員</a></li>
         </ul>
         <label for="menu_btn" class="btn menu_btn">
           <i class="fas fa-bars"></i>

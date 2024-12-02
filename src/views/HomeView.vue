@@ -26,7 +26,7 @@ import axios from "axios"
 axios.get('http://localhost:3002/api/product/GetAllProduct')
       .then(response => {
         console.log("ok");
-         console.log(response.data);
+         console.log(response.data[0].Image_path);
       })
       .catch(error => {
         console.log("notok");
