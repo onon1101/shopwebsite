@@ -1,5 +1,5 @@
 <template>
-    <v-card class="product-card">
+    <v-card class="product-card" >
       <!-- 商品圖片 -->
       <v-img :src="image" alt="Product Image" class="product-image"></v-img>
   
@@ -52,18 +52,20 @@
   
   <style scoped>
   .product-card {
-    max-width: 250px;
-    margin: 2px;
+
+
+
     /* 移除邊框和陰影 */
     box-shadow: none; /* 移除陰影 */
     border: none;     /* 移除邊框 */
     border-radius: 0; /* 移除圓角 */
     overflow: hidden;
-    text-align: left;
+    text-align: center;
   }
   
   .product-image {
-    height: 220px;
+    
+    height: 300px;
     object-fit: cover;
   }
   

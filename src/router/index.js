@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import HomeAbout from '../views/AboutView.vue'
+import ProductView from '../views/ProductView.vue'
 import LoginView from '../views/LoginView.vue'
 import MemberView from '../views/MemberView.vue'
 import { useCookies } from "vue3-cookies";
@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: HomeAbout,
+    component: ProductView,
 
   },
   {
@@ -47,7 +47,7 @@ router.beforeEach((to) => {
       return {
         path: '/member',
         // 保存我们所在的位置，以便以后再来
-        query: { redirect: to.fullPath },
+       // query: { redirect: to.fullPath },
       }
     }
   } 

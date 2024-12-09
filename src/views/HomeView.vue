@@ -6,26 +6,23 @@
       <Slidshowimage/>
     </div>
   </div>
-
   <div class ="newarrival">
-    <h1>NEW ARRIVAL</h1>
-    <h1>新商品</h1>
-
-    <div class = newproductlist v-for ="(item,index) in getimage(1)"  :key = "index" >
-      <img :src="item.src" :alt="item.description" />
-      <div class="description">{{ item.description }}</div>
+      <h1>NEW ARRIVAL</h1>
+      <h1>新商品</h1>
+        <v-row class="one_row" justify="center" >
+          <v-col class="pa-2_ma-2"  v-for ="(item,index) in getimage(1)"  cols="2"  :key = "index">
+              <v-img :src="item.src" alt="item.description" class="product-image"></v-img>
+          </v-col>
+        </v-row>
+        <v-row class="mb-6" justify="center" >
+          <v-col class="pa-2_ma-2"  v-for ="(item,index) in getimage(5)"  cols="2"  :key = "index">
+              <v-img :src="item.src" alt="item.description" class="product-image"></v-img>
+          </v-col>
+        </v-row>
     </div>
-
-    <div class = newproductlist2 v-for ="(item,index) in  getimage(5)"  :key = "index" >
-      <img :src="item.src" :alt="item.description" />
-      <div class="description">{{ item.description }}</div>
-    </div>
-  </div>
-  
-
   <div class = "testlogic">
     <a>登入測試:{{loginstate}}</a>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -96,10 +93,15 @@ export default {
 </script>
 
 <style scoped>
+
+.one_row{
+  margin-top: 20px;
+}
 .testlogic{
   top:200px;
   position: relative;
 }
+
 
 .home .slidshowimage{
   overflow:hidden;
@@ -112,7 +114,10 @@ export default {
   position: relative;
   top: 200px;
   margin: 0px 0px;
+  
 }
+
+
 
 
 .newarrival h1{
@@ -121,26 +126,7 @@ export default {
   color: rgba(149, 75, 219, 0.842);
 }
 
-.newarrival .newproductlist{
-  align-items: center;
-  flex-direction: column;
-  display:inline-flex;
-  justify-content: center ;
-  box-sizing: border-box;
-  margin: 0px -50px;
-  padding: 0 0px;
-  margin-top: 20px;
-}
-.newarrival .newproductlist2{
-  align-items: center;
-  flex-direction: column;
-  display:inline-flex;
-  justify-content: center ;
-  box-sizing: border-box;
-  margin: 0px -50px;
-  padding: 0 0px;
-  margin-top: 20px;
-}
+
 .description {
   font-size: 16px;
   color: #555;

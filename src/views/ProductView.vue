@@ -7,12 +7,12 @@
     </header>
 
     <!-- 主內容 -->
-    <v-container class="main-container">
+    <v-container class="main-container" fluid >
       <h1 class="new-arrival-title">グッズ</h1>
       <h2 class="new-arrival-subtitle">Goods</h2>
 
-      <v-row  :gap="8">
-        <v-col cols="12" sm="6" md="4" lg="3" v-for="(product, index) in products" :key="index">
+      <v-row  >
+        <v-col  v-for="(product, index) in products" :key="index" :cols="3" class = "AllProduct" >
           <ProductCard
             :image="product.image"
             :category="product.category"
@@ -97,19 +97,15 @@ export default {
 
 <style scoped>
 /* Header 樣式 */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white; /* 確保 Header 背景覆蓋住內容 */
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-}
+
+
 
 /* 主內容容器 */
 .main-container {
+
   margin-top: 100px; /* 留出 Header 的高度 */
   padding: 20px;
+
 }
 
 /* New Arrival 標題樣式 */
