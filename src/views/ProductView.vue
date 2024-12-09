@@ -1,124 +1,66 @@
-<!-- GoodsView 實體商品 -->
 <template>
-  <div class="home">
-    <!-- Header -->
-    <header class="header">
-      <HeadMenu />
-    </header>
+  <HeadMenu/>
 
-    <!-- 主內容 -->
-    <v-container class="main-container" fluid >
-      <h1 class="new-arrival-title">グッズ</h1>
-      <h2 class="new-arrival-subtitle">Goods</h2>
-
-      <v-row  >
-        <v-col  v-for="(product, index) in products" :key="index" :cols="3" class = "AllProduct" >
-          <ProductCard
-            :image="product.image"
-            :category="product.category"
-            :name="product.name"
-            :price="product.price"
-          />
+    <v-container class="product_container">
+      <v-row justify="space-around" >
+        <!-- 左侧部分 -->
+        <v-col cols="6"  class="left-panel">
+          <v-img
+            src="https://store.vspo.jp/cdn/shop/files/05_53609e3c-957b-4084-95e4-7bd1f7cc3937_900x.png?v=1732528769"
+            max-height="550"
+            contain
+          ></v-img>
+        </v-col>
+  
+        <!-- 右侧部分 -->
+        <v-col cols="6"  class="right-panel">
+          <v-sheet class="pa-2 ma-2">
+            2024 年貓田綱生日紀念日<p></p>
+            發售期間：~2024年12月12日0:00
+          </v-sheet>
         </v-col>
       </v-row>
-      
+  
+  
     </v-container>
-  </div>
-</template>
+    <router-view />
+  </template>
+  
+  <script>
+  import HeadMenu from "../components/HeadMenu.vue";
 
-<script>
-import HeadMenu from "../components/HeadMenu.vue";
-import ProductCard from "../components/ProductCard.vue";
-
-export default {
-  name: "HomeView",
-  components: {
-    HeadMenu,
-    ProductCard,
-  },
-  data() {
-    return {
-      products: [
-        {
-          image: require("../assets/test1.png"), // 使用 require 來正確解析圖片
-          category: "グッズ",
-          name: "橘ひなの　誕生日記念2024",
-          price: "¥1800 より",
-        },
-        {
-          image: require("../assets/test2.png"),
-          category: "グッズ",
-          name: "紡木こかげ　誕生日記念2024",
-          price: "¥1500 より",
-        },
-        {
-          image: require("../assets/test3.png"),
-          category: "デジタルグッズ",
-          name: "ぶいすぽっ！看病ボイス2024",
-          price: "¥500 より",
-        },
-        {
-          image: require("../assets/test4.png"),
-          category: "グッズ",
-          name: "【メンバーデザイン】いぬべにTシャツ【八雲べに】",
-          price: "¥4000",
-        },
-        {
-          image: require("../assets/test5.png"),
-          category: "グッズ",
-          name: "VSPO! GEAR ガラスマウスパッド",
-          price: "¥16940",
-        },
-        {
-          image: require("../assets/test6.png"),
-          category: "グッズ",
-          name: "【メンバーデザイン】清楚ですがTシャツ【藍沢エマ】",
-          price: "¥4000 より",
-        },
-        {
-          image: require("../assets/test7.png"),
-          category: "グッズ",
-          name: "【メンバーデザイン】ぽやねこパーカー【花芽すみれ】",
-          price: "¥7000",
-        },
-        {
-          image: require("../assets/test8.png"),
-          category: "グッズ",
-          name: "【メンバーデザイン】ありゃTシャツ【花芽なずな】",
-          price: "¥4000",
-        },
-        // 更多商品...
-      ],
-    };
-
-  },
-};
-</script>
-
-<style scoped>
-/* Header 樣式 */
+  export default {
+    name: "LeftRightLayout",
+    components: {
+      HeadMenu
+    },
+    data(){
+ 
+    },
+    methods:{
+      
+    }
+  };
+  </script>
+  
+  <style scoped>
 
 
-
-/* 主內容容器 */
-.main-container {
-
-  margin-top: 100px; /* 留出 Header 的高度 */
-  padding: 20px;
-
-}
-
-/* New Arrival 標題樣式 */
-.new-arrival-title {
-  text-align: center;
-  font-size: 24px;
-  color: purple;
-}
-
-.new-arrival-subtitle {
-  text-align: center;
-  font-size: 18px;
-  color: gray;
-  margin-bottom: 20px;
-}
-</style>
+  .v-container{
+    margin-top: 100px;
+    width: 70%;
+  }
+  
+  .left-panel {
+    background-color: #8ab6f0;
+    padding: 20px;
+  }
+  
+  
+  
+  .right-panel {
+    background-color: #a3eeaa;
+    padding: 20px;
+  }
+  
+  </style>

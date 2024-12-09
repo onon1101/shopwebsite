@@ -6,9 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+const jwt = require("jsonwebtoken");
+const { expressjwt } = require('express-jwt');
 var app = express();
 const cors = require('cors');  
+
+const secretKey = 'DEMO';
+
+
 app.use(cors({  
     origin:['http://localhost:8080'],
     methods:['GET','POST','DELETE'],

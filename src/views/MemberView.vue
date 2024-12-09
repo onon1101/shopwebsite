@@ -13,11 +13,16 @@ const { cookies } = useCookies();
   export default {
     methods:{
         signout(){
-            cookies.remove('LoggedIn')
+          try{
+            alert("登出成功")
+            cookies.remove('token');
             this.$router.push('/');
+          }catch{
+            alert("登出失敗")
+          }
+
         }
     }
-
   }
   
 </script>

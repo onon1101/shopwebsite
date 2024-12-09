@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProductView from '../views/ProductView.vue'
+import AllProductView from '../views/AllProductView.vue'
 import LoginView from '../views/LoginView.vue'
 import MemberView from '../views/MemberView.vue'
+import ProductView from '../views/ProductView.vue'
+import { jwtDecode } from "jwt-decode";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 
@@ -14,10 +16,15 @@ const routes = [
 
   },
   {
-    path: '/about',
-    name: 'about',
-    component: ProductView,
+    path: '/product',
+    name: 'allproduct',
 
+    children: [
+      {
+        path: '' , 
+        component: AllProductView,
+      }
+    ]
   },
   {
     path:'/Login',
@@ -30,6 +37,12 @@ const routes = [
     name: 'member',
     component:MemberView,
   },
+  {
+    path:'/product/:id',
+    name: 'product',
+    component:ProductView,
+  }
+
 ]
 
 const router = createRouter({
@@ -38,16 +51,12 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  // 而不是去检查每条路由记录
-  // to.matched.some(record => record.meta.requiresAuth)
   if(to.name == 'login'){
-    if (!(to.meta.Islogined || !(cookies.get('LoggedIn')))) {
-      // 此路由需要授权，请检查是否已登录
-      // 如果没有，则重定向到登录页面
-      return {
-        path: '/member',
-        // 保存我们所在的位置，以便以后再来
-       // query: { redirect: to.fullPath },
+    if(cookies.get('token') != null)  {
+      if (!(to.meta.Islogined || !(jwtDecode(cookies.get('token')).LoggedIn))) {
+        return {
+          path: '/member',
+        }
       }
     }
   } 

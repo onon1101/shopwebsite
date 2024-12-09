@@ -38,6 +38,9 @@ router.get('/api/member/CheckMemberAccount',function(req,res,next){
   let  account =  encodeURIComponent(req.query.account);
   account = account.replace("%40","@")
   const account_password = (req.query.password) ;
+  const jwt = require("jsonwebtoken");
+  const expressJWT = require("express-jwt");
+  const secretKey = 'DEMO';
 
   var sql = `SELECT Username, Password FROM member WHERE Email = '${account}' AND Password = '${account_password}'`;
   dp.query(sql,function(err,result){
@@ -50,16 +53,21 @@ router.get('/api/member/CheckMemberAccount',function(req,res,next){
           message: '帳號或密碼錯誤'
       });
       }else{
-         res.cookie('LoggedIn', true, {maxAge:6000000}); 
+        const payload = {
+          LoggedIn: true
+      }
+        const token = jwt.sign(payload, secretKey, { expiresIn: '600s' });
+        //  res.cookie('LoggedIn', true, {maxAge:600000}); 
          return res.json({
           success: true,  // 標示操作是否成功
           message: '登入成功',
-          token: 'dummy-jwt-token'  // 假設返回的 token
+          token
       });
       }
     }
   });
-
 });
+
+
 
 module.exports = router;

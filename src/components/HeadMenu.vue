@@ -11,7 +11,7 @@
           <label for="cancel_btn" class="btn cancel_btn">
             <i class="fas fa-times"></i>
           </label>
-          <li><a href="/shopwebsite/about">商品</a></li>
+          <li><a href="/shopwebsite/product">商品</a></li>
           <li><a href="#">數位商品</a></li>
           <li>
             <a href="#" class="desktop_item">成員</a>
@@ -28,50 +28,14 @@
           </li>
           <li>
             <a href="#" class="desktop_item">所有產品清單</a>
-            <input type="checkbox" id="showMega" />
-            <label for="showMega" class="mobile_item">Mega Menu</label>
-            <div class="mega_box">
-              <div class="content">
-                <!--  -->
-                <div class="row img_row">
-                  <!-- <header>Our Services</header> -->
-                  <div class="services_img"></div>
-                </div>
-                <!--  -->
-                <div class="row">
-                  <header>Design Services</header>
-                  <ul class="mega_links first_links">
-                    <li><a href="#">Graphics</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Ui / Ux</a></li>
-                  </ul>
-                </div>
-                <!--  -->
-                <!--  -->
-                <div class="row">
-                  <header>Product Services</header>
-                  <ul class="mega_links">
-                    <li><a href="#">Graphics</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Ui / Ux</a></li>
-                  </ul>
-                </div>
-                <!--  -->
-                <!--  -->
-                <div class="row">
-                  <header>SEO Services</header>
-                  <ul class="mega_links">
-                    <li><a href="#">Graphics</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Ui / Ux</a></li>
-                  </ul>
-                </div>
-                <!--  -->
-              </div>
-            </div>
+            <ul class="drop_menu">
+              <li><a href="#">Drop Menu 1</a></li>
+              <li><a href="#">Drop Menu 2</a></li>
+              <li><a href="#">Drop Menu 3</a></li>
+              <li><a href="#">Drop Menu 4</a></li>
+              <li><a href="#">Drop Menu 5</a></li>
+              <li><a href="#">Drop Menu 6</a></li>
+            </ul>
           </li>
           <li><a href="#">常見問題</a></li>
           <li><a href="/shopwebsite/Login">會員</a></li>

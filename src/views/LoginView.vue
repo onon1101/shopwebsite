@@ -21,9 +21,12 @@
 <script>
 
 import HeadMenu from '../components/HeadMenu.vue'
-// import { useCookies } from "vue3-cookies";
-// const { cookies } = useCookies();
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
 import axios from "axios"
+
+
+
 axios.defaults.withCredentials = true 
 
 // console.log(cookies.get('LoggedIn'));
@@ -52,6 +55,8 @@ export default {
                 });
              //   console.log(response.data);
                 if (response.data.success) {
+                    cookies.set('token',response.data.token);
+
                     alert('登入成功');
                     this.$router.push('/');
 
