@@ -1,7 +1,6 @@
 <template>
     <div class="headmenu">
     <nav>
-
       <div class="wrapper">
         <div class="logo">
           <!--a href="#">VSPO</a-->
@@ -76,7 +75,13 @@
           </li>
           <li><a href="#">常見問題</a></li>
           <li><a href="/shopwebsite/Login">會員</a></li>
-          <li><a href="#">購物車</a></li>
+
+          <li>
+            <!-- 購物車按鈕 -->
+            <v-btn icon @click="drawerVisible = true">
+              <v-icon>mdi-cart</v-icon>
+            </v-btn>
+          </li>
         </ul>
         <label for="menu_btn" class="btn menu_btn">
           <i class="fas fa-bars"></i>
@@ -84,12 +89,46 @@
       </div>
     </nav>
 
+        <!-- 購物車抽屜 -->
+        <v-navigation-drawer
+            v-model="drawerVisible"
+            color="grey-lighten-2"
+            location="end"
+            temporary
+        >
+            <!-- 抽屜內容 -->
+            <v-container class="d-flex justify-center align-center h-100">
+                <!-- 提示文字 -->
+                <v-row>
+                    <v-col class="text-center" cols="12">
+                        <p style="margin-bottom: 16px;">カートが空です</p>
+                    </v-col>
+
+                    <!-- 操作按鈕 -->
+                    <v-col class="text-center">
+                    <v-btn color="purple lighten-2" large>
+                        <a href="/shopwebsite/about" style="color: white; text-decoration: none;">ショッピングを開始する</a>
+                    </v-btn>
+                    </v-col>
+                </v-row>
+
+                
+            </v-container>
+        </v-navigation-drawer>
+
     </div>
 
 </template>
 
 <script>
-
+export default {
+  name: "HeadMenu",
+  data() {
+    return {
+      drawerVisible: false, // 控制購物車抽屜的開關
+    };
+  },
+};
 </script>
 
 <style scoped>

@@ -6,21 +6,26 @@
       <Slidshowimage/>
     </div>
   </div>
+
   <div class ="newarrival">
-      <h1>NEW ARRIVAL</h1>
-      <h1>新商品</h1>
-        <div class = newproductlist v-for ="(item,index) in getimage(1)"  :key = "index" >
-          <img :src="item.src" :alt="item.description" />
-  <div class="description">{{ item.description }}</div>
-      </div>
+    <h1>NEW ARRIVAL</h1>
+    <h1>新商品</h1>
+
+    <div class = newproductlist v-for ="(item,index) in getimage(1)"  :key = "index" >
+      <img :src="item.src" :alt="item.description" />
+      <div class="description">{{ item.description }}</div>
+    </div>
+
+    <div class = newproductlist2 v-for ="(item,index) in  getimage(5)"  :key = "index" >
+      <img :src="item.src" :alt="item.description" />
+      <div class="description">{{ item.description }}</div>
+    </div>
   </div>
-  <div class = newproductlist2 v-for ="(item,index) in  getimage(5)"  :key = "index" >
-    <img :src="item.src" :alt="item.description" />
-    <div class="description">{{ item.description }}</div>
-  </div>
+  
+
   <div class = "testlogic">
     <a>登入測試:{{loginstate}}</a>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -126,12 +131,9 @@ export default {
   padding: 0 0px;
   margin-top: 20px;
 }
-.newproductlist2{
+.newarrival .newproductlist2{
   align-items: center;
   flex-direction: column;
-  position: relative;
-  top: 200px;
-  margin: 0px 0px;
   display:inline-flex;
   justify-content: center ;
   box-sizing: border-box;
