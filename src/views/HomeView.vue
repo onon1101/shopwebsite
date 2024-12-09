@@ -11,12 +11,22 @@
       <h1>新商品</h1>
         <v-row class="one_row" justify="center" >
           <v-col class="pa-2_ma-2"  v-for ="(item,index) in getimage(1)"  cols="2"  :key = "index">
-              <v-img :src="item.src" alt="item.description" class="product-image"></v-img>
+              <v-img :src="item.src"  class="product-image"></v-img>
+              <v-row class="name-row">
+                <v-col>
+                  <p class="product-name">{{ item.description }}</p>
+                </v-col>
+              </v-row>
           </v-col>
         </v-row>
         <v-row class="mb-6" justify="center" >
           <v-col class="pa-2_ma-2"  v-for ="(item,index) in getimage(5)"  cols="2"  :key = "index">
               <v-img :src="item.src" alt="item.description" class="product-image"></v-img>
+              <v-row class="name-row">
+                <v-col>
+                  <p class="product-name">{{ item.description }}</p>
+                </v-col>
+              </v-row>
           </v-col>
         </v-row>
     </div>
