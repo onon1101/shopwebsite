@@ -68,6 +68,20 @@ router.get('/api/member/CheckMemberAccount',function(req,res,next){
   });
 });
 
+router.get('/api/product/GetProductInfo',function(req,res,next){
+  let Product_id =  req.query.id;
+  var sql = `select * from product where Product_id = '${Product_id}' ;`;
+  dp.query(sql,function(err,result){
+    if(err){
+      console.log("查詢錯誤");
+    }else{
+      console.log(result);
+      res.send(result);
+    }
+  });
+
+});
+
 
 
 module.exports = router;

@@ -109,7 +109,7 @@ export default {
     font-weight: 900;
     font-size: 20px;
     background-color: #9954f3;
-    color: white;
+    color: white !important;
     border: none;
     padding: 12px 20px;
 
