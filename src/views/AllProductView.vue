@@ -13,12 +13,14 @@
 
       <v-row  >
         <v-col  v-for="(product, index) in products" :key="index" :cols="3" class = "AllProduct" >
+          <a :href="'/product/' + index">
           <ProductCard
             :image="product.image"
             :category="product.category"
             :name="product.name"
             :price="product.price"
           />
+        </a>
         </v-col>
       </v-row>
       
@@ -27,8 +29,8 @@
 </template>
 
 <script>
-import HeadMenu from "../components/HeadMenu.vue";
-import ProductCard from "../components/ProductCard.vue";
+import HeadMenu from "@/components/HeadMenu.vue";
+import ProductCard from "@/components/ProductCard.vue";
 
 export default {
   name: "HomeView",
