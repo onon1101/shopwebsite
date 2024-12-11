@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import HeadMenu from "../components/HeadMenu.vue";
-import ProductCard from "../components/ProductCard.vue";
+import HeadMenu from "@/components/HeadMenu.vue";
+import ProductCard from "@/components/ProductCard.vue";
 
 export default {
   name: "HomeView",
