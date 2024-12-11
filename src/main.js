@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import './index.css';
 import App from './App.vue'
 import router from './router'
 import VueCookies from 'vue3-cookies'
@@ -7,6 +8,7 @@ import 'vuetify/styles' // 引入 Vuetify 樣式
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+
 
 // 初始化 Vuetify
 
