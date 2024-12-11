@@ -20,7 +20,7 @@
 
 <script>
 
-import HeadMenu from '../components/HeadMenu.vue'
+import HeadMenu from '@/components/HeadMenu.vue'
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 import axios from "axios"

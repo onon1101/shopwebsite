@@ -25,7 +25,7 @@
   </template>
   
   <script>
-  import HeadMenu from "../components/HeadMenu.vue";
+  import HeadMenu from "@/components/HeadMenu.vue";
   import axios from "axios"
 
 
@@ -46,7 +46,7 @@
           }).then(response => {
             this.product_info = response.data
             this.Descrip = response.data[0].Descrip.replace(/\n/g,'<br>')
-            this.test_path =  require(`../assets/images/${ response.data[0].Image_path}`)
+            this.test_path =  require(`@/assets/images/${ response.data[0].Image_path}`)
             console.log( this.Descrip)
            
            console.log(this.product_info.data[0].Image_path)
