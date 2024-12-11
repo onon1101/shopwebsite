@@ -43,7 +43,8 @@
           <li>
             <!-- 購物車按鈕 -->
             <v-btn icon @click="drawerVisible = true">
-              <v-icon>mdi-cart</v-icon>
+              <!-- <v-icon>mdi-cart</v-icon> -->
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
             </v-btn>
           </li>
         </ul>
